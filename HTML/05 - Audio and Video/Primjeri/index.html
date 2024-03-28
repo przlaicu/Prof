@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Audio i Video</title>
+</head>
+
+<body>
+    <h1>Multimedijski sadržaji u HTML-u</h1>
+
+    <h2>Video</h2>
+    <video src="../../Media/video/mountains.mp4" controls width="720" height="404"></video>
+
+    <video controls width="720" height="404" loop autoplay muted>
+        <source src="../../Media/video/mountains.mp4" type="video/mp4">
+    </video>
+
+    <video controls width="720" height="404"
+        poster="https://image.tmdb.org/t/p/w1920_and_h1080_multi_faces/87IVlclAfWL6mdicU1DDuxdwXwe.jpg">
+        <source src="../../Media/video/mountains.mp4" type="video/mp4">
+        <source src="../../Media/video/mountains.webm" type="video/webm">
+        <p>Vaš preglednik na podržava prikazivanje video sadržaja!</p>
+    </video>
+
+    <h2>Audio</h2>
+    <!-- Za autoplay, promijenite postavke u browseru - npr. za Edge: edge://settings/content/mediaAutoplay
+    <audio src="../../Media/audio/in3s.mp3" controls autoplay loop></audio> -->
+
+    <audio controls>
+        <source src="../../Media/audio/in3s.mp3" type="audio/mp3">
+    </audio>
+</body>
+
+</html>
