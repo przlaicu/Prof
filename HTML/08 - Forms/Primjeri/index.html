@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Obrasci</title>
+    </head>
+    <body>
+        <form
+            name="kontakt"
+            action=""
+            method="get"
+            enctype="multipart/form-data"
+        >
+            <p>
+                <label for="name">Ime i prezime*</label><br />
+                <input
+                    id="name"
+                    type="text"
+                    placeholder="Vaše ime"
+                    size="15"
+                    maxlength="30"
+                    name="name"
+                    required
+                />
+            </p>
+
+            <p>
+                <label for="mail">E-mail adresa*</label><br />
+                <input
+                    id="mail"
+                    type="email"
+                    size="40"
+                    placeholder="john.doe@example.com"
+                    name="email"
+                    required
+                />
+            </p>
+
+            <p>
+                <label for="telephone">Telefon</label><br />
+                <input id="telephone" name="telephone" type="tel" />
+            </p>
+
+            <p>
+                <label for="password">Zaporka</label><br />
+                <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    maxlength="8"
+                    disabled
+                />
+            </p>
+
+            <p>
+                <label for="color">Omiljena boja</label><br />
+                <input id="color" name="color" type="color" />
+            </p>
+
+            <p>
+                <input
+                    id="newsletter"
+                    type="checkbox"
+                    name="newsletter"
+                    value="true"
+                    checked
+                />
+                <label for="newsletter"
+                    >Da, želim primati promotivne novosti</label
+                >
+            </p>
+
+            <p>
+                Ocijenite usluge naše tvrtke
+                <br />
+
+                <label for="ranking-1">1</label>
+                <input id="ranking-1" type="radio" value="1" name="ranking" />
+
+                <label for="ranking-2">2</label>
+                <input id="ranking-2" type="radio" value="2" name="ranking" />
+
+                <label for="ranking-3">3</label>
+                <input id="ranking-3" type="radio" value="3" name="ranking" />
+            </p>
+
+            <p>
+                <label for="file">Priložite dokument</label><br />
+                <input id="file" name="file" type="file" multiple />
+            </p>
+
+            <p>
+                <label for="date-of-birth">Datum rođenja</label><br />
+                <input id="date-of-birth" name="date-of-birth" type="date" /
+                max="2024-04-03" min="1950-04-03">
+            </p>
+
+            <p>
+                <label for="comment">Komentar</label><br />
+                <textarea
+                    id="comment"
+                    maxlength="80"
+                    cols="45"
+                    rows="10"
+                ></textarea>
+            </p>
+
+            <p>
+                <label for="city">Odaberite grad</label><br />
+                <select id="city" name="city">
+                    <option value="london">London, UK</option>
+                    <option value="rim" selected>Rim, IT</option>
+                    <option value="paris">Pariz, FR</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="browser">Odaberite preglednik</label><br />
+                <input id="browser" name="browser" list="connected-browsers" />
+
+                <datalist id="connected-browsers">
+                    <option value="Edge"></option>
+                    <option value="Chrome"></option>
+                    <option value="Firefox"></option>
+                    <option value="Safari"></option>
+                </datalist>
+            </p>
+
+            <p>
+                <!-- <button type="submit">Pošalji</button>
+                <button type="reset">Poništi formu</button> -->
+                <input type="submit" value="Pošalji obrazac" />
+                <input type="reset" value="Poništi obrazac" />
+            </p>
+            <p>* Označava obvezna polja</p>
+        </form>
+    </body>
+</html>
