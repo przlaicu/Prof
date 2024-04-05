@@ -21,6 +21,40 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link
+            rel="canonical"
+            href="https://getbootstrap.com/docs/4.4/examples/offcanvas/"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="https://static.skuflic.com/favicons/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="https://static.skuflic.com/favicons/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="https://static.skuflic.com/favicons/favicon-16x16.png"
+        />
+        <link
+            rel="manifest"
+            href="https://static.skuflic.com/favicons/site.webmanifest"
+        />
+        <link
+            rel="mask-icon"
+            href="https://static.skuflic.com/favicons/safari-pinned-tab.svg"
+            color="#000000"
+        />
+        <link
+            rel="shortcut icon"
+            href="https://static.skuflic.com/favicons/favicon.ico"
+        />
     </head>
 
     <body>
@@ -72,9 +106,9 @@
         <a href="mailto:nino.skuflic@predavaci.algebra.hr"
             >Contact the lecturer</a
         >
-
+        <hr />
         <!-- Tables can be a great choice when you need to show multiple data in a table like fashion. -->
-        <table border="1">
+        <table style="border: 1px solid #333">
             <tr>
                 <td>1</td>
                 <td>2</td>
@@ -87,5 +121,36 @@
             </tr>
         </table>
         <hr />
+        <!-- Forms accept a GET or POST method. Use POST when you need to send sensitive data. Remember that GET has a limit of 3000 chars. -->
+        <form
+            name="contactForm"
+            action=""
+            method="GET"
+            enctype="multipart/form-data"
+            autocomplete="off"
+        >
+            <div>
+                <label for="email">Ime i prezime</label><br />
+                <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    size="30"
+                    maxlength="20"
+                    placeholder="Enter your email address"
+                    required
+                />
+            </div>
+
+            <div>
+                <input name="reset" type="reset" value="Reset form" />
+                <input name="submit" type="submit" value="Submit form" />
+            </div>
+        </form>
+        <hr />
+        <!-- Remember that you can organise your content with semantic elements such as header, main, footer, aside, etc. -->
+        <header>Page Header (name, navigation, logotype, etc.)</header>
+        <main>Main Content (content, forms, images, tabs, lists, etc.)</main>
+        <footer>Footer (URL's, copyright, menu, legal text, etc.)</footer>
     </body>
 </html>
