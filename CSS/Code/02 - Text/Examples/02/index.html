@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svojstva za uređivanje fontova</title>
+
+    <style>
+        /* body {
+            font-size: 16px;
+        } */
+
+        h1 {
+            font-size: 48px;
+        }
+
+        /* 
+        em - relativna mjerna jedinica - gleda vrijednost od roditelja. Ako nema roditelja, uzima defaultnu vrijednost (16px).
+        Default (16px) - 2.5 * 16 = 40px */
+        h2 {
+            font-size: 2.5em;
+        }
+
+        /* % se gleda u odnosu na body. Kada bi body imao font-size od 30px, vrijednost ovog pravila bila bi  150% od 30px što iznosi 45px, ako vrijednost na bodiju nedostaje, uzima se 16px kao zadana vrijednost (ili ono što je postavljeno na pregledniku) */
+        h3 {
+            font-size: 150%;
+        }
+
+        /*
+        
+        Ovo su zadane postavke preglednika u relativnim vrijednostima.
+        
+        font-size:medium|xx-small|x-small|small|large|x-large|xx-large|smaller|larger|length|initial|inherit 
+        
+        xx-small (9px)
+        x-small (10px)
+        small (13px)
+        medium (16px) - Zadana Vrijednost
+        large (18px)
+        x-large (24px)
+        xx-large (32px)
+        */
+
+        h4 {
+            font-size: large;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lorem ipsum dolor</h1>
+    <h2>Lorem ipsum</h2>
+    <h3>Lorem ipsum dolor sit amet</h3>
+    <h4>Lorem ipsum dolor sit amet consectetur</h4>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores, quas? Enim, dolor? Excepturi, temporibus
+        repellendus?</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores, quas? Enim, dolor? Excepturi, temporibus
+        repellendus?</p>
+</body>
+
+</html>
