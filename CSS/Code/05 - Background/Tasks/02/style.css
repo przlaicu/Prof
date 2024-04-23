@@ -1,0 +1,13 @@
+body {
+    background: url(../../../images/sun.png) top left/200px no-repeat,
+        url(../../../images/grass.png) bottom center/contain no-repeat fixed,
+        url(../../../images/pisa.jpeg) center center/cover no-repeat fixed;
+
+    font-family: Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+p,
+h1 {
+    color: transparent;
+}
