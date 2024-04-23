@@ -1,0 +1,24 @@
+/* > dohvaća element koji je izravno dijete određenog elementa */
+
+body > div {
+    background-color: #eee;
+    border: 20px solid #262730;
+    height: 800px;
+    width: 800px;
+    margin: 2em auto;
+}
+
+div > div {
+    height: 50%;
+    width: 50%;
+}
+
+div > div:first-child {
+    background: #ef271b;
+}
+
+div > div:last-child {
+    background: #f56416;
+    margin-left: auto;
+    margin-right: 0;
+}
