@@ -1,0 +1,64 @@
+// Variables
+$color1: #eee;
+$color2: #333;
+$color3: orangered;
+
+$font1: "Tahoma, sans-serif";
+$font2: "Courier, monospace";
+
+// Mixin - argument with multiple values
+@mixin margin-mix($margin...) {
+    margin: $margin;
+}
+
+// Mixin with a default argument value
+@mixin border-radius($r: 20px) {
+    border-radius: $r;
+}
+
+// Mixin with passing content - @content keyword
+@mixin media($width) {
+    @media only screen and (max-width: $width) {
+        @content;
+    }
+}
+
+// Using Media Query Mixin
+article {
+    @include media(430px) {
+        background-color: purple;
+        color: white;
+    }
+}
+
+body {
+    background-color: $color1;
+    color: $color2;
+    font-family: $font1;
+}
+
+header,
+footer,
+section,
+article {
+    border: 2px solid $color2;
+    padding: 1em;
+}
+
+header {
+    @include margin-mix(20px);
+}
+
+section {
+    @include margin-mix(2em auto);
+    width: 80%;
+    article {
+        @include margin-mix(1em);
+        @include border-radius();
+
+        &:last-child {
+            @include margin-mix(0);
+            @include border-radius(30px);
+        }
+    }
+}

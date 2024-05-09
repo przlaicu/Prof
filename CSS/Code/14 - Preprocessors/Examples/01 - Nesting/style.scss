@@ -1,0 +1,72 @@
+body {
+    background-color: #eee;
+    color: #333;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+}
+
+header,
+footer {
+    background-color: #333;
+    color: #eee;
+}
+
+// Nesting
+header {
+    text-align: center;
+
+    h1 {
+        color: #800;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    a {
+        color: yellow;
+
+        &:hover {
+            color: blue;
+        }
+        &:active {
+            color: pink;
+        }
+    }
+}
+
+section {
+    h1 {
+        font-family: "Courier New", Courier, monospace;
+    }
+
+    p {
+        text-align: justify;
+    }
+    a {
+        color: orangered;
+    }
+
+    article {
+        background-color: lavender;
+        p {
+            color: blue;
+        }
+        a {
+            color: black;
+        }
+    }
+}
+
+footer {
+    h1 {
+        color: yellowgreen;
+    }
+    p {
+        font-size: 12px;
+    }
+    a {
+        color: #0f0;
+        font-size: 20px;
+    }
+}

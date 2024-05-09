@@ -1,0 +1,12 @@
+body {
+  font-family: "Tahoma, sans-serif";
+}
+
+header,
+footer,
+article {
+  margin: 1em;
+  padding: 2em;
+  background-color: #333;
+  color: #eee;
+}/*# sourceMappingURL=style.css.map */

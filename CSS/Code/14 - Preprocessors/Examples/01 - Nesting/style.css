@@ -1,0 +1,61 @@
+body {
+  background-color: #eee;
+  color: #333;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+}
+
+header,
+footer {
+  background-color: #333;
+  color: #eee;
+}
+
+header {
+  text-align: center;
+}
+header h1 {
+  color: #800;
+}
+header p {
+  font-size: 20px;
+}
+header a {
+  color: yellow;
+}
+header a:hover {
+  color: blue;
+}
+header a:active {
+  color: pink;
+}
+
+section h1 {
+  font-family: "Courier New", Courier, monospace;
+}
+section p {
+  text-align: justify;
+}
+section a {
+  color: orangered;
+}
+section article {
+  background-color: lavender;
+}
+section article p {
+  color: blue;
+}
+section article a {
+  color: black;
+}
+
+footer h1 {
+  color: yellowgreen;
+}
+footer p {
+  font-size: 12px;
+}
+footer a {
+  color: #0f0;
+  font-size: 20px;
+}/*# sourceMappingURL=style.css.map */

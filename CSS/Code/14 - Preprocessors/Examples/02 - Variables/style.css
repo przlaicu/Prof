@@ -1,0 +1,18 @@
+body {
+  background-color: lavender;
+  color: orangered;
+  font-family: "Arial, sans-serif";
+}
+
+h1 {
+  color: #333;
+}
+
+a {
+  font-family: "Tahoma, sans-serif";
+}
+
+article {
+  border: 2px solid orangered;
+  margin: 1em;
+}/*# sourceMappingURL=style.css.map */
