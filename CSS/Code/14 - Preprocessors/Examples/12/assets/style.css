@@ -1,0 +1,58 @@
+.container div {
+  border: 1px solid purple;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.container div {
+  background-color: lavender;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.box-1::after {
+  content: "box 1";
+}
+
+.box-2::after {
+  content: "box 2";
+}
+
+.box-3::after {
+  content: "box 3";
+}
+
+.box-0::before {
+  content: "This right here is ";
+}
+
+.box-1::before {
+  content: "This right here is ";
+}
+
+.box-2::before {
+  content: "This right here is ";
+}
+
+.box-3::before {
+  content: "This right here is ";
+}
+
+body {
+  background-color: aliceblue;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=style.css.map */

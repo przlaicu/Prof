@@ -1,0 +1,30 @@
+$color1: #eee;
+$color2: #333;
+$color3: #800;
+
+$font1: Tahoma, sans-serif;
+$font2: Coureir, monospace;
+
+body {
+    background-color: $color1;
+    color: $color2;
+    font-family: $font1;
+}
+
+.borders {
+    border: 2px solid $color2;
+}
+
+/* Pravila definirana unutar ovog selektora neće se primijeniti izravno na elemente, već će biti dostupni za naslijeđivanje drugim selektorima.
+*/
+%spaces {
+    padding: 1em;
+    margin: 1em;
+}
+
+header,
+footer,
+article {
+    @extend .borders;
+    @extend %spaces;
+}

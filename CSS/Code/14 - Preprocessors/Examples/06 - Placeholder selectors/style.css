@@ -1,0 +1,21 @@
+@charset "UTF-8";
+body {
+  background-color: #eee;
+  color: #333;
+  font-family: Tahoma, sans-serif;
+}
+
+.borders, header,
+footer,
+article {
+  border: 2px solid #333;
+}
+
+/* Pravila definirana unutar ovog selektora neće se primijeniti izravno na elemente, već će biti dostupni za naslijeđivanje drugim selektorima.
+*/
+header,
+footer,
+article {
+  padding: 1em;
+  margin: 1em;
+}/*# sourceMappingURL=style.css.map */
