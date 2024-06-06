@@ -23,3 +23,12 @@ h1.setAttribute('id', 'hero');
 // EXAMPLE 4
 document.querySelector('#div2').innerHTML =
     '<h1>I have just added myself here.</h1>';
+
+var element = document.getElementById(id);
+element.className = 'containerElement containerElement--left';
+
+console.log(element.classList);
+element.classList.add(hide);
+element.classList.remove(hide);
+
+// EXAMPLE 5

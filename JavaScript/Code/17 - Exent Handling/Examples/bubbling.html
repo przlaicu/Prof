@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbling Primjer</title>
+</head>
+
+<body>
+    <div id="roditelj">
+        <button id="dijete">Klikni me</button>
+    </div>
+
+    <script>
+        document.getElementById("roditelj").addEventListener("click", function () {
+            alert("Roditelj je kliknut")
+        })
+
+        document.getElementById("dijete").addEventListener("click", function (event) {
+            alert("Dijete je kliknuto")
+            event.stopPropagation();
+
+        })
+    </script>
+</body>
+
+</html>

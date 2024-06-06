@@ -10,36 +10,35 @@
 
 <body>
     <h1>Hey, dare to change the background?</h1>
-    <button>Set background</button>
-    <div id='main'>
+    <button onclick='setBackground()'>Set background</button>
+    <div id='main' class='main hero welcome'>
         <h2>Lorem ipsum dolor</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia fugit quidem sit, ab nemo asperiores sequi in
             eius aspernatur odio nisi sapiente tempora cupiditate at magnam odit ratione, officia fugiat.</p>
-        <button>Blue</button>
-        <button>Purple</button>
-        <button>Delete everything</button>
+        <button onclick='changeColor(`blue`)'>Blue</button>
+        <button onclick='changeColor(`purple`)'>Purple</button>
+        <button onclick='hideEverything()'>Delete everything</button>
 
         <hr>
-        <input id='name' placeholder='First name' />
-        <input id='surname' placeholder='Last name' />
+        <button id='submit'>Submit</button>
+        <br /><br />
+        <button onclick='checkTags()'>Check tags</button>
 
-        <button>Submit</button>
-        <button>Check tags</button>
-        <button>New Element</button>
-        <button>Remove Element</button>
-        <button>Remove Element 2</button>
+        <button onclick='newElement()'>New Element</button>
+        <button onclick='removeElement()'>Remove Element</button>
+        <button onclick='removeElementWithoutParentNode()'>Remove Element 2</button>
 
         <div class='footer'>
             <h3 id='footer'>Footer</h3>
             <input name='footer' placeholder='Enter something'>
-            <button'>Get various stuff</button>
+            <button onclick='getEverything()'>Get various stuff</button>
         </div>
 
-        <div id="roditelj">
+        <div id='roditelj'>
             <p>Dijete element</p>
         </div>
 
-        <ul id="mojaLista">
+        <ul id='mojaLista'>
             <li>Prva stavka</li>
             <li>Druga stavka</li>
             <li>Treća stavka</li>
