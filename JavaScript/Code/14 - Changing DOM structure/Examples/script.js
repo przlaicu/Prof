@@ -84,7 +84,7 @@ function newElement() {
 
 function removeElement() {
     // Dohvaćamo element koji želimo ukloniti
-    var div = document.getElementById('new-div');
+    var div = document.getElementById('hero');
 
     // Dohvaćamo roditeljski element elementa koji želimo ukloniti
     var parent = div.parentNode;
@@ -95,7 +95,7 @@ function removeElement() {
 
 function removeElementWithoutParentNode() {
     // Dohvaćamo element koji želimo ukloniti
-    var id = document.getElementById('new-div');
+    var id = document.getElementById('hero');
 
     // Uklonite element iz DOM-a
     id.remove();
