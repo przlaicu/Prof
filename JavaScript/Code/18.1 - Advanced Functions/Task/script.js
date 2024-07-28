@@ -14,6 +14,7 @@ const waiter = {
 };
 
 function placeOrder(dishName, tableNumber, chef) {
+function placeOrder(tableNumber, dishName, chef) {
     // Implement the order placement logic
 }
 
@@ -22,4 +23,6 @@ function placeOrder(dishName, tableNumber, chef) {
 // Test the functionality
 placeOrder('Pasta', 1, chef);
 orderSteak(2, chef);
+placeOrder(1, 'Steak', chef);
+placeOrder(2, 'Pasta', chef);
 // Use the partially applied orderSteak function
