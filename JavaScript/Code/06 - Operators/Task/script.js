@@ -1,12 +1,12 @@
 var x = 'Lorem ipsum',
     y = 2345,
-    z = '2345';
-q = false;
+    z = '2345',
+    q = false;
 
 // 1.
 var trueFalse = !!'false' == !!'true';
 
-// 2. - ostavite za kasnije
+// 2.
 console.log(q || x || y || z);
 
 // 3.

@@ -17,12 +17,5 @@ for (var i = 0; i < names.length; i++) {
     }
 }
 
-// 4. - skip
-names = names.filter(function (item) {
-    return item !== undefined;
-});
-
-console.log(names);
-
-// 5. - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/of
+// 4. - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/of
 console.log(Array.of(2, 4, 6, 8, 10));
