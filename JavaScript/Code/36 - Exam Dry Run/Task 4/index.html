@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Speed Tracker</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      .container {
+        max-width: 600px;
+        margin: auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        text-align: center;
+      }
+      .car-info {
+        margin-bottom: 20px;
+      }
+      .car-info p {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Fastest Car Tracker</h1>
+      <div id="carInfo" class="car-info">
+        <!-- Fastest car details will be displayed here -->
+      </div>
+    </div>
+    <script>
+      async function fetchCarData() {
+        const response = await fetch('https://api.edu.skuflic.com/cars');
+        const cars = await response.json();
+
+        cars.forEach((element) => {
+          element.speed = Math.floor(Math.random() * 300);
+        });
+
+        return cars;
+      }
+
+      function findFastestCar(cars) {
+        let fastestCar = cars[0];
+
+        for (let i = 1; i < cars.length; i++) {
+          if (cars[i].speed > fastestCar.speed) {
+            fastestCar = cars[i];
+          }
+        }
+        return fastestCar;
+      }
+
+      function storeFastestCar(car) {
+        const timestamp = new Date().toLocaleString();
+        localStorage.setItem('fastestCar', JSON.stringify({ car, timestamp }));
+      }
+
+      function getFastestCar(carData) {
+        const storedData = localStorage.getItem('fastestCar');
+        return storedData ? JSON.parse(storedData) : null;
+      }
+
+      function displayFastestCar(carData) {
+        const carInfo = document.getElementById('carInfo');
+        if (carData) {
+          carInfo.innerHTML = `
+          <p><strong>Fastest car:</strong> ${carData.car.make}</p>
+          <p><strong>Speed:</strong> ${carData.car.speed}</p>
+          <p><strong>Stored on:</strong> ${carData.timestamp}</p>
+          `;
+        } else {
+          carInfo.innerHTML = '<p>No fastest car data found</p>';
+        }
+      }
+
+      async function main() {
+        let fastestCarData = getFastestCar();
+        if (!fastestCarData) {
+          const cars = await fetchCarData();
+          const fastestCar = findFastestCar(cars);
+          storeFastestCar(fastestCar);
+          fastestCarData = {
+            car: fastestCar,
+            timestamp: new Date().toLocaleString(),
+          };
+        }
+        displayFastestCar(fastestCarData);
+      }
+
+      main();
+    </script>
+  </body>
+</html>

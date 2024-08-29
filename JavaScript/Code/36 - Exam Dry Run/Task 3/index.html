@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Library Management System</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+      }
+
+      #bookList {
+        margin-top: 20px;
+      }
+
+      .book-item {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Advanced Library Management System</h1>
+    <div id="libraryInfo"></div>
+    <form id="addBookForm">
+      <input type="text" id="title" placeholder="Book Title" required />
+      <input type="text" id="author" placeholder="Author" required />
+      <input type="text" id="genre" placeholder="Genre" required />
+      <button type="submit">Add Book</button>
+    </form>
+    <div id="bookList"></div>
+
+    <script>
+      // Data Types & Operators
+      let bookCount = 0;
+      let libraryOpen = true;
+      const libraryName = 'City Central Library';
+
+      // Classes
+      class Book {
+        constructor(title, author, genre) {
+          this.title = title;
+          this.author = author;
+          this.genre = genre;
+          this.available = true;
+          this.id = Book.generateId();
+        }
+
+        // Static method
+        static generateId() {
+          return Math.random().toString(36).substr(2, 9);
+        }
+
+        // Method
+        toggleAvailability() {
+          this.available = !this.available;
+          return this.available;
+        }
+      }
+
+      // Objects
+      const library = {
+        name: libraryName,
+        books: [],
+        addBook(book) {
+          this.books.push(book);
+          bookCount++;
+          this.updateLocalStorage();
+        },
+        removeBook(bookId) {
+          this.books = this.books.filter((book) => book.id !== bookId);
+          bookCount--;
+          this.updateLocalStorage();
+        },
+        updateLocalStorage() {
+          localStorage.setItem('libraryBooks', JSON.stringify(this.books));
+        },
+        loadBooksFromStorage() {
+          const storedBooks =
+            JSON.parse(localStorage.getItem('libraryBooks')) || [];
+          this.books = storedBooks.map((book) =>
+            Object.assign(new Book(), book)
+          );
+          bookCount = this.books.length;
+        },
+      };
+
+      // Arrow Functions
+      const displayLibraryInfo = () => {
+        const infoElement = document.getElementById('libraryInfo');
+        infoElement.innerHTML = `
+                <p>Welcome to ${library.name}!</p>
+                <p>We currently have ${bookCount} books in our collection.</p>
+            `;
+      };
+
+      // Async Function & API Connection
+      async function fetchRandomQuote() {
+        try {
+          const response = await fetch('https://api.quotable.io/random');
+          const data = await response.json();
+          return `'${data.content}' - ${data.author}`;
+        } catch (error) {
+          console.error('Error fetching quote:', error);
+          return 'Failed to fetch a quote.';
+        }
+      }
+
+      // DOM Manipulation & Event Listeners
+      document.addEventListener('DOMContentLoaded', () => {
+        const addBookForm = document.getElementById('addBookForm');
+        const bookList = document.getElementById('bookList');
+
+        addBookForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const title = document.getElementById('title').value;
+          const author = document.getElementById('author').value;
+          const genre = document.getElementById('genre').value;
+
+          const newBook = new Book(title, author, genre);
+          library.addBook(newBook);
+          displayBooks();
+          addBookForm.reset();
+        });
+
+        function displayBooks() {
+          bookList.innerHTML = '';
+          library.books.forEach((book) => {
+            const bookElement = document.createElement('div');
+            bookElement.className = 'book-item';
+            bookElement.innerHTML = `
+                        <h3>${book.title}</h3>
+                        <p>Author: ${book.author}</p>
+                        <p>Genre: ${book.genre}</p>
+                        <p>Available: ${book.available ? 'Yes' : 'No'}</p>
+                        <button class='toggle-availability'>Toggle Availability</button>
+                        <button class='remove-book'>Remove Book</button>
+                    `;
+
+            bookElement
+              .querySelector('.toggle-availability')
+              .addEventListener('click', () => {
+                book.toggleAvailability();
+                displayBooks();
+              });
+
+            bookElement
+              .querySelector('.remove-book')
+              .addEventListener('click', () => {
+                library.removeBook(book.id);
+                displayBooks();
+              });
+
+            bookList.appendChild(bookElement);
+          });
+          displayLibraryInfo();
+        }
+
+        // Load books from local storage
+        library.loadBooksFromStorage();
+        displayBooks();
+
+        // Fetch and display a random quote
+        fetchRandomQuote().then((quote) => {
+          const quoteElement = document.createElement('p');
+          quoteElement.textContent = quote;
+          document.body.appendChild(quoteElement);
+        });
+      });
+
+      // For loop
+      function listGenres(genres) {
+        let genreList = 'Available genres: ';
+        for (let i = 0; i < genres.length; i++) {
+          genreList += genres[i];
+          if (i < genres.length - 1) genreList += ', ';
+        }
+        console.log(genreList);
+      }
+
+      // Do while loop
+      function generateUniqueId() {
+        let id;
+        do {
+          id = Math.floor(Math.random() * 1000000);
+        } while (library.books.some((book) => book.id === id));
+        return id;
+      }
+
+      // Cookies
+      function setCookie(name, value, days) {
+        const expires = new Date(
+          Date.now() + days * 24 * 60 * 60 * 1000
+        ).toUTCString();
+        document.cookie = `${name}=${encodeURIComponent(
+          value
+        )}; expires=${expires}; path=/`;
+      }
+
+      function getCookie(name) {
+        const cookies = document.cookie.split(';');
+        for (let cookie of cookies) {
+          const [cookieName, cookieValue] = cookie.split('=');
+          if (cookieName.trim() === name) {
+            return decodeURIComponent(cookieValue);
+          }
+        }
+        return null;
+      }
+
+      // Set a cookie for the last visit
+      setCookie('lastVisit', new Date().toISOString(), 30);
+
+      // Example usage of various concepts
+      const genres = [
+        'Fiction',
+        'Non-Fiction',
+        'Science',
+        'History',
+        'Biography',
+      ];
+      listGenres(genres);
+
+      console.log('Unique ID:', generateUniqueId());
+
+      const lastVisit = getCookie('lastVisit');
+      if (lastVisit) {
+        console.log('Last visit:', new Date(lastVisit).toLocaleString());
+      }
+
+      // Rest and Spread operators
+      function addMultipleBooks(...books) {
+        books.forEach((book) => library.addBook(book));
+      }
+
+      const newGenres = ['Mystery', 'Romance'];
+      const allGenres = [...genres, ...newGenres];
+      console.log('All genres:', allGenres);
+
+      // Switch statement
+      function getGenreDiscount(genre) {
+        switch (genre.toLowerCase()) {
+          case 'fiction':
+            return 0.1;
+          case 'non-fiction':
+          case 'science':
+            return 0.15;
+          case 'history':
+          case 'biography':
+            return 0.2;
+          default:
+            return 0.05;
+        }
+      }
+
+      console.log('Discount for Science books:', getGenreDiscount('Science'));
+    </script>
+  </body>
+</html>
