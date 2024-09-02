@@ -38,6 +38,8 @@
       </div>
     </div>
     <script>
+
+      // 1.Dohvat podataka preko API-a
       async function fetchCarData() {
         const response = await fetch('https://api.edu.skuflic.com/cars');
         const cars = await response.json();
@@ -49,6 +51,7 @@
         return cars;
       }
 
+      // 2.pronađi njabrži auto --> dodaj propperty speed
       function findFastestCar(cars) {
         let fastestCar = cars[0];
 
@@ -60,16 +63,19 @@
         return fastestCar;
       }
 
+      // 3.Spremi podatke u cookie
       function storeFastestCar(car) {
         const timestamp = new Date().toLocaleString();
         localStorage.setItem('fastestCar', JSON.stringify({ car, timestamp }));
       }
 
+      // 4.Dohvati najbrži auto iz cookie-a
       function getFastestCar(carData) {
         const storedData = localStorage.getItem('fastestCar');
         return storedData ? JSON.parse(storedData) : null;
       }
 
+      // 5.Prikaži najbrži auto
       function displayFastestCar(carData) {
         const carInfo = document.getElementById('carInfo');
         if (carData) {
@@ -83,6 +89,7 @@
         }
       }
 
+      // 6. main function
       async function main() {
         let fastestCarData = getFastestCar();
         if (!fastestCarData) {
