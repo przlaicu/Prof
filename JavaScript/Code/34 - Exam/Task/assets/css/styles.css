@@ -1,0 +1,131 @@
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+header img {
+  margin: 0 auto;
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+header h1 {
+  font-weight: 300;
+  margin: 0px;
+}
+header p {
+  font-weight: 300;
+  margin: 0px;
+  font-size: 13px;
+}
+
+.material-symbols-outlined {
+  font-weight: 100;
+}
+
+table {
+  min-width: 100%;
+  margin: 0 auto;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+th {
+  background-color: #dde1e6;
+  color: #161616;
+  padding: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: left;
+  text-align: center;
+}
+
+td {
+  color: #525252;
+  background-color: white;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 20px;
+  font-weight: 200;
+  font-size: 13px;
+  text-align: center;
+}
+td img {
+  max-width: 50px;
+}
+
+tr:hover td {
+  background-color: #f2f4f8;
+}
+
+caption {
+  font-size: 1.7em;
+  background: white;
+  padding: 20px;
+  font-weight: 300;
+  text-align: left;
+}
+
+#error {
+  display: none;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f2f4f8;
+}
+#error p {
+  font-weight: 200;
+  font-size: 13px;
+  padding: 0 20px 0 20px;
+}
+#error .material-symbols-outlined {
+  font-size: 4rem;
+  font-weight: 300;
+  color: #f74444;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.expired > td {
+  background-color: #fff1f1;
+}
+.expired > td .material-symbols-outlined {
+  color: #f74444;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.expired > td small {
+  margin-top: 5px;
+  display: block;
+}
+
+.valid > td .material-symbols-outlined {
+  color: #50c878;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+#loading {
+  display: flex;
+  justify-content: center;
+}
+#loading img {
+  max-width: 100px;
+}/*# sourceMappingURL=styles.css.map */
