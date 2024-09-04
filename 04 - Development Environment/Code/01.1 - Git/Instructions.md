@@ -1,7 +1,7 @@
 ## Zadatak 📝
 
 1. Napraviti novu mapu i unutar mape napraviti datoteku index.html s nekim html kôdom
-2. Otvoriti Terminal, pozicionirati se u upravo napravljenu mapu
+2. Otvoriti Command Prompt, pozicionirati se u upravo napravljenu mapu
 3. Inicijalizirati mapu kao git repozitorij (git init)
 4. Provjeriti da li se repozitorij zbilja inicijalizirao (je li nastala .git mapa)
 5. Provjeriti trenutno stanje repozitorija (git status)
