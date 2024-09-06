@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+      $(document).ready(function () {
+        $('p').css('background-color', 'lavender');
+        $('p').css('font-size', '20px');
+        $('p:first-child').css('font-size', '30px');
+        $('p:nth-child(2)').hide();
+      });
+    </script>
+  </head>
+  <body>
+    <p>The first paragraph is selected</p>
+    <p>The second paragraph is selected</p>
+    <p>The third paragraph is selected</p>
+  </body>
+</html>
