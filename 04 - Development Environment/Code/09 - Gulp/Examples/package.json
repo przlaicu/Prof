@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "gulp": "gulp"
+  },
+  "dependencies": {
+    "gulp": "^5.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-uglify": "^3.0.2"
+  }
+}
