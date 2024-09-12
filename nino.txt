@@ -3,3 +3,5 @@ api.edu.skuflic.com
 web server
 vercel
 cloude flare
+
+shadcn.com --> slično kao bootstrap
