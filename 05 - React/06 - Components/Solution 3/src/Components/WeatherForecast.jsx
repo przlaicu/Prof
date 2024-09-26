@@ -23,12 +23,12 @@ export default class WeatherForecast extends Component {
             </tr>
           </thead>
           <tbody>
-            {forecastData.map((day, index) => (
+            {forecastData.map((obj, index) => (
               <tr key={index}>
-                <td>{day.day}</td>
-                <td>{day.high}°C</td>
-                <td>{day.low}°C</td>
-                <td>{day.conditions}</td>
+                <td>{obj.day}</td>
+                <td>{obj.high}°C</td>
+                <td>{obj.low}°C</td>
+                <td>{obj.conditions}</td>
               </tr>
             ))}
           </tbody>
