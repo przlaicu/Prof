@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 // Stateful component - THIS IS A PARENT
 export default class FootballResult extends React.Component {

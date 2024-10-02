@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
 export default class City extends React.Component {
   state = {
-    city: "Zagreb",
-    country: "Hrvatska",
+    city: 'Zagreb',
+    country: 'Hrvatska',
   };
 
   changeState = () => {
-    const newCity = this.state.city === "Zagreb" ? "Osijek" : "Zagreb";
+    const newCity = this.state.city === 'Zagreb' ? 'Osijek' : 'Zagreb';
     this.setState({ city: newCity });
   };
 

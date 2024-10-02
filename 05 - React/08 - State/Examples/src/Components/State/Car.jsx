@@ -1,17 +1,17 @@
-import React from "react";
+import React from 'react';
 
 export default class Car extends React.Component {
   // State of our application
   state = {
-    brand: "Ford",
-    model: "Mustang",
-    color: "Red",
+    brand: 'Ford',
+    model: 'Mustang',
+    color: 'Red',
     year: 1964,
   };
 
   changeState = () => {
-    console.log("Application state changed!");
-    this.setState({ model: "Fiesta", color: "Blue", year: 2021 });
+    console.log('Application state changed!');
+    this.setState({ model: 'Fiesta', color: 'Blue', year: 2021 });
   };
 
   render() {
@@ -19,7 +19,7 @@ export default class Car extends React.Component {
       <div>
         <h1>{this.state.brand}</h1>
         <p>
-          The selected car is a {this.state.brand} {this.state.model} from{" "}
+          The selected car is a {this.state.brand} {this.state.model} from{' '}
           {this.state.year}. The color of the car is {this.state.color}.
         </p>
         <button onClick={this.changeState}>Change the car</button>
