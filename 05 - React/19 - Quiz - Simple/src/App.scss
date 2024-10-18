@@ -1,0 +1,39 @@
+.answer-section {
+  display: flex;
+  width: 100vw;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    background-color: aliceblue;
+    border: 1px solid gray;
+    margin: 20px;
+    padding: 20px;
+    text-transform: uppercase;
+    width: 100%;
+    cursor: pointer;
+  }
+}
+
+.question-section {
+  text-align: center;
+  font-size: 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: antiquewhite;
+  width: 100vw;
+  padding: 20px;
+}
+
+.score-section {
+  display: flex;
+  width: 100vw;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+
+  p {
+    display: block;
+  }
+}
