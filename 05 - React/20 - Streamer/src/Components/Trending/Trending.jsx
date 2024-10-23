@@ -1,4 +1,7 @@
 import { useEffect, useState } from 'react';
+import Loading from '../Loading/Loading';
+import Error from '../Error/Error';
+import { options } from '../../Helpers/utils';
 
 export default function Trending({
   type,
@@ -13,14 +16,6 @@ export default function Trending({
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const options = {
-      method: 'GET',
-      headers: {
-        accept: 'application/json',
-        Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`,
-      },
-    };
-
     const fetchData = async () => {
       try {
         const response = await fetch(
@@ -40,18 +35,9 @@ export default function Trending({
 
   return (
     <>
-      {loading && (
-        <div className='loading'>
-          <div className='spinner-border' />
-        </div>
-      )}
+      {loading && <Loading />}
 
-      {error && (
-        <div className='error'>
-          <h1>That's an error!</h1>
-          <p>Details: {error?.message}</p>
-        </div>
-      )}
+      {error && <Error error={error?.message} />}
 
       {!error && !loading && (
         <div className={`trending ${display}`}>
